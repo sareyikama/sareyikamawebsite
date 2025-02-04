@@ -28,7 +28,7 @@ body {
     padding: 10px 40px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
-    width: 70%;
+    width: 50%;
     margin: 20px auto;
 }
 
@@ -40,8 +40,10 @@ body {
 .menu {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px; /* Menü öğeleri arasındaki boşluk */
+    padding-left: 20px; /* Menüyi sola kaydırır */
 }
+
 
 .menu li {
     position: relative;
