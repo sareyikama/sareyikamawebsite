@@ -200,25 +200,47 @@ body {
     font-size: 18px;
 }
 
-/* 768px'den küçük ekranlar (tablet ve telefonlar için) */
+/* Tablet ve telefon için stil düzenlemeleri */
 @media (max-width: 768px) {
+    /* Menü yazı boyutunu küçült */
+    .menu a {
+        font-size: 14px; /* Menüde yazı boyutunu küçült */
+    }
+
+    /* Randevu al butonunu küçült */
+    .btn {
+        font-size: 14px; /* Butonu küçült */
+    }
+
+    /* Hero başlığını da küçült */
     .hero h1 {
-        font-size: 28px; /* Daha küçük başlık */
+        font-size: 28px;
     }
 
     .hero p {
-        font-size: 16px; /* Daha küçük paragraf */
+        font-size: 16px;
     }
 }
 
-/* 480px'den küçük ekranlar (mobil telefonlar için) */
+/* Çok daha küçük telefonlar için stil düzenlemeleri */
 @media (max-width: 480px) {
+    /* Menü yazı boyutunu daha da küçült */
+    .menu a {
+        font-size: 12px; /* Menü yazı boyutunu daha da küçült */
+    }
+
+    /* Randevu al butonunu daha da küçült */
+    .btn {
+        font-size: 12px; /* Butonu daha da küçült */
+    }
+
+    /* Hero başlığını daha da küçült */
     .hero h1 {
-        font-size: 24px; /* Çok daha küçük başlık */
+        font-size: 24px;
     }
 
     .hero p {
-        font-size: 14px; /* Daha da küçük paragraf */
+        font-size: 14px;
     }
 }
 
