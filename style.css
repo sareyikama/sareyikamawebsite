@@ -41,8 +41,9 @@ font-family: 'Questrial', sans-serif;
 .menu {
     list-style: none;
     display: flex;
+    justify-content: right; /* Menü elemanlarını ortalar */
+    width: 100%; /* Menü elemanları genişliği */
     gap: 30px; /* Menü öğeleri arasındaki boşluk */
-    padding-left: 20px; /* Menüyi sola kaydırır */
 }
 
 
