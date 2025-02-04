@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Website</title>
+    <title>Sare Yıkama</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-    <main>
-        <p>This is a simple website with separate HTML, CSS, and JavaScript files.</p>
-        <button id="clickButton">Click Me</button>
-    </main>
-    <script src="script.js"></script>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/refs/heads/main/images/Logo.png" alt="Sare Yıkama Logo">
+        </div>
+        <ul class="menu">
+            <li><a href="#">Hizmetler ▼</a></li>
+            <li><a href="#">Galeri</a></li>
+            <li><a href="#">Fiyat Listesi</a></li>
+            <li><a href="#">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="content">
+            <h1>Sare yıkama ile koltuklar temiz içiniz rahat olsun!</h1>
+            <p>Sende temiz bir rahatlık istiyorsan şimdi randevu al<br> ve hemen koltuklarını temizleyelim.</p>
+            <button class="btn">Randevu al</button>
+        </div>
+        <div class="image">
+            <img src="https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/refs/heads/main/images/test.jpeg" alt="Koltuk Temizliği">
+        </div>
+    </section>
+
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
 </body>
 </html>

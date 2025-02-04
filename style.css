@@ -1,36 +1,117 @@
 /* Renkleri değişken olarak tanımlıyoruz */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
+    --primary-color: #2F54EB;
+    --secondary-color: #7D7D7D;
+    --background-color: #F8F8F8;
     --text-color: #333;
-    --background-color: #f4f4f4;
 }
 
+/* Genel Stiller */
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color);
-    color: var(--text-color);
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 20px;
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 40px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    width: 70%;
+    margin: 20px auto;
 }
 
-button {
-    background-color: var(--secondary-color);
+.logo img {
+    width: 50px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: inline;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Hero Bölümü */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 10%;
+    text-align: left;
+}
+
+.content {
+    max-width: 500px;
+}
+
+.content h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.content p {
+    font-size: 16px;
+    color: var(--secondary-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 20px;
     margin-top: 20px;
 }
 
-button:hover {
-    background-color: darkgreen;
+.btn:hover {
+    background-color: darkblue;
+}
+
+/* Görsel */
+.image img {
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+/* Slider Dots */
+.dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 5px;
+    background-color: lightgray;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
 }
