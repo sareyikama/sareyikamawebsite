@@ -59,6 +59,8 @@ body {
     flex-wrap: wrap;
     padding: 50px 10%;
     text-align: left;
+    height: 500px; /* Arka planın görünmesini sağlamak için yükseklik ekledim */
+    background-color: #ccc; /* Arka planın yükseklik boş kalmaması için */
 }
 
 .content {
