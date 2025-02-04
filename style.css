@@ -90,6 +90,25 @@ body {
     color: var(--secondary-color);
 }
 
+/* Hero Bölümü */
+.hero .content {
+    max-width: 500px;
+    position: relative; /* Konumlandırmayı sağlar */
+    top: -200px; /* Yukarı kaydırma */
+    left: -200px; /* Sola kaydırma */
+}
+
+.content h1 {
+    font-size: 36px; /* H1 için daha büyük font */
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.content p {
+    font-size: 20px; /* P için daha büyük font */
+    color: var(--secondary-color);
+}
+
 .btn {
     background-color: var(--primary-color);
     color: white;
