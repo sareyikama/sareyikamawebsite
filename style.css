@@ -13,6 +13,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     transition: background-image 1s ease-in-out;
+    min-height: 100vh; /* Sayfanın yüksekliği en az ekran boyutu kadar olacak */
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -59,8 +62,15 @@ body {
     flex-wrap: wrap;
     padding: 50px 10%;
     text-align: left;
-    height: 500px; /* Arka planın görünmesini sağlamak için yükseklik ekledim */
+    height: 100vh; /* Sayfanın tamamını kaplayacak şekilde yükseklik verildi */
     background-color: #ccc; /* Arka planın yükseklik boş kalmaması için */
+    background-size: cover;
+    background-position: center;
+    position: fixed; /* Sayfanın tamamında görünmesi için fixed yapılır */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1; /* Diğer öğelerin önünde olmaması için z-index kullanıldı */
 }
 
 .content {
@@ -99,10 +109,14 @@ body {
     border-radius: 10px;
 }
 
-/* Slider Dots */
 .dots {
     text-align: center;
     margin-top: 20px;
+    position: absolute; /* Sayfanın üst kısmına yapışması için position absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Dots'lar arka planın önünde olacak şekilde */
 }
 
 .dot {
