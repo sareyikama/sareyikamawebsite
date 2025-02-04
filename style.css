@@ -29,7 +29,7 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
     width: 50%;
-    margin: 20px auto;
+    margin: 30px auto;
 }
 
 .logo img {
@@ -111,15 +111,16 @@ body {
     border-radius: 10px;
 }
 
+/* Slider Dots */
 .dots {
     text-align: center;
     margin-top: 20px;
-    position: absolute; /* Sayfanın üst kısmına yapışması için position absolute */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Dots'lar arka planın önünde olacak şekilde */
+    position: fixed; /* Sabit pozisyon */
+    bottom: 20px; /* Sayfanın alt kısmına 20px uzaklık */
+    left: 50%; /* Ortalamak için */
+    transform: translateX(-50%); /* Ortalamayı düzeltmek için */
 }
+
 
 .dot {
     height: 10px;

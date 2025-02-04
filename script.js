@@ -18,15 +18,16 @@ function changeBackground() {
     dots.forEach(dot => dot.classList.remove('active'));
     dots[currentDot].classList.add('active');
 
-    // Arka plan resmini değiştir
-    const images = [
-        'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/refs/heads/main/images/test.jpeg',
-        'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/refs/heads/main/images/otherimage1.png',
-        'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/refs/heads/main/images/otherimage2.png',
-        'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/refs/heads/main/images/otherimage3.png'
-    ];
+// Arka plan resmini değiştir
+const images = [
+    'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/main/images/test.jpeg',
+    'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/main/images/otherimage1.jpeg',
+    'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/main/images/otherimage2.jpeg',
+    'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/main/images/otherimage3.jpeg'
+];
 
-    hero.style.backgroundImage = `url('${images[currentDot]}')`;
+hero.style.backgroundImage = `url('${images[currentDot]}')`;
+
 
     // currentDot'u güncelle
     currentDot = (currentDot + 1) % dots.length;
