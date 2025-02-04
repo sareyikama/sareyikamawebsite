@@ -6,14 +6,15 @@
     --text-color: #333;
 }
 
-/* Genel Stiller */
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    text-align: center;
     margin: 0;
     padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
 }
+
 
 /* Navbar */
 .navbar {
