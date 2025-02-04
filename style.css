@@ -186,5 +186,41 @@ font-family: 'Questrial', sans-serif;
     background-color: #f1f1f1;
 }
 
+/* Genel font */
+body {
+    font-family: 'Questrial', sans-serif;
+}
+
+/* Desktop ve tablet için varsayılan font boyutu */
+.hero h1 {
+    font-size: 32px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* 768px'den küçük ekranlar (tablet ve telefonlar için) */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px; /* Daha küçük başlık */
+    }
+
+    .hero p {
+        font-size: 16px; /* Daha küçük paragraf */
+    }
+}
+
+/* 480px'den küçük ekranlar (mobil telefonlar için) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 24px; /* Çok daha küçük başlık */
+    }
+
+    .hero p {
+        font-size: 14px; /* Daha da küçük paragraf */
+    }
+}
+
 
 
