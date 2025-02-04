@@ -16,6 +16,7 @@ body {
     min-height: 100vh; /* Sayfanın yüksekliği en az ekran boyutu kadar olacak */
     display: flex;
     flex-direction: column;
+font-family: 'Questrial', sans-serif;
 }
 
 
