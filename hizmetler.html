@@ -1,36 +1,186 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sare Yıkama - Randevu</title>
-    <link rel="stylesheet" href="hizmetler.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sare Yıkama - Randevu</title>
+  <link rel="stylesheet" href="hizmetler.css">
 </head>
 <body>
 
-    <div class="service-form">
-        <h1>Hizmet Seçimi</h1>
-        <form id="serviceForm">
-            <div class="service">
-                <label>
-                    <input type="checkbox" name="service" value="Koltuk Yıkama"> Koltuk Yıkama
-                </label>
-                <div class="quantity-container" id="quantityKoltuk" style="display:none;">
-                    <label>Adet: 
-                        <input type="number" name="quantityKoltuk" min="1" value="1">
-                    </label>
-                </div>
-            </div>
+  <div class="service-form">
+    <h1>Hizmet Seçimi</h1>
+    <form id="serviceForm">
+      
+      <!-- 1. Koltuk Yıkama -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Koltuk Yıkama"> Koltuk Yıkama
+        </label>
+        <div class="quantity-container" id="quantityKoltuk" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityKoltuk" min="1" value="1">
+          </label>
+        </div>
+      </div>
 
-            <!-- Add similar blocks for other services like Araç Koltuk Yıkama, Boya Koruma, etc. -->
+      <!-- 2. Araç Koltuk Yıkama -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Araç Koltuk Yıkama"> Araç Koltuk Yıkama
+        </label>
+        <div class="quantity-container" id="quantityAracKoltuk" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityAracKoltuk" min="1" value="1">
+          </label>
+        </div>
+      </div>
 
-            <div class="total-price">
-                <p><strong>Toplam Fiyat: <span id="totalPrice">₺0</span></strong></p>
-            </div>
-            <button type="submit">Rezervasyon Yap</button>
-        </form>
-    </div>
+      <!-- 3. Araç Alt Döşeme Yıkama -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Araç Alt Döşeme Yıkama"> Araç Alt Döşeme Yıkama
+        </label>
+        <div class="quantity-container" id="quantityAracAltDoseme" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityAracAltDoseme" min="1" value="1">
+          </label>
+        </div>
+      </div>
 
-    <script src="hizmetler.js"></script>
+      <!-- 4. Araç Tavan Yıkama -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Araç Tavan Yıkama"> Araç Tavan Yıkama
+        </label>
+        <div class="quantity-container" id="quantityAracTavan" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityAracTavan" min="1" value="1">
+          </label>
+        </div>
+      </div>
+
+      <!-- 5. Araç Motor Yıkama -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Araç Motor Yıkama"> Araç Motor Yıkama
+        </label>
+        <div class="quantity-container" id="quantityAracMotor" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityAracMotor" min="1" value="1">
+          </label>
+        </div>
+      </div>
+
+      <!-- 6. Pasta Cila -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Pasta Cila"> Pasta Cila
+        </label>
+        <div class="quantity-container" id="quantityPastaCila" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityPastaCila" min="1" value="1">
+          </label>
+        </div>
+      </div>
+
+      <!-- 7. Boya Koruma -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Boya Koruma"> Boya Koruma
+        </label>
+        <div class="quantity-container" id="quantityBoyaKoruma" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityBoyaKoruma" min="1" value="1">
+          </label>
+        </div>
+      </div>
+
+      <!-- 8. Seramik Kaplama -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Seramik Kaplama"> Seramik Kaplama
+        </label>
+        <div class="quantity-container" id="quantitySeramikKaplama" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantitySeramikKaplama" min="1" value="1">
+          </label>
+        </div>
+      </div>
+
+      <!-- 9. Far Parlatma -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Far Parlatma"> Far Parlatma
+        </label>
+        <div class="quantity-container" id="quantityFarParlatma" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityFarParlatma" min="1" value="1">
+          </label>
+        </div>
+      </div>
+
+      <!-- 10. Ev Temizliği -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Ev Temizliği"> Ev Temizliği
+        </label>
+        <div class="quantity-container" id="quantityEvTemizligi" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityEvTemizligi" min="1" value="1">
+          </label>
+        </div>
+      </div>
+
+      <!-- 11. Cam Temizliği -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Cam Temizliği"> Cam Temizliği
+        </label>
+        <div class="quantity-container" id="quantityCamTemizligi" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityCamTemizligi" min="1" value="1">
+          </label>
+        </div>
+      </div>
+
+      <!-- 12. Leke Temizleme -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Leke Temizleme"> Leke Temizleme
+        </label>
+        <div class="quantity-container" id="quantityLekeTemizleme" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityLekeTemizleme" min="1" value="1">
+          </label>
+        </div>
+      </div>
+
+      <!-- 13. Kaba İnşaat Temizleme -->
+      <div class="service">
+        <label>
+          <input type="checkbox" name="service" value="Kaba İnşaat Temizleme"> Kaba İnşaat Temizleme
+        </label>
+        <div class="quantity-container" id="quantityKabaInsaatTemizleme" style="display:none;">
+          <label>Adet: 
+            <input type="number" name="quantityKabaInsaatTemizleme" min="1" value="1">
+          </label>
+        </div>
+      </div>
+
+      <!-- Toplam Fiyat Alanı -->
+      <div class="total-price">
+        <p><strong>Toplam Fiyat: <span id="totalPrice">₺0</span></strong></p>
+      </div>
+
+      <!-- Rezervasyon ve Menüye Geri Dön Butonları -->
+      <div class="form-buttons">
+        <button type="submit">Rezervasyon Yap</button>
+        <a href="index.html" class="back-button">Menüye Geri Dön</a>
+      </div>
+    </form>
+  </div>
+
+  <script src="hizmetler.js"></script>
 </body>
 </html>

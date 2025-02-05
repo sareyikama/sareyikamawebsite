@@ -1,60 +1,87 @@
-// hizmetler.js
 document.addEventListener('DOMContentLoaded', () => {
-    const servicePrices = {
-        'Koltuk Yıkama': 100,
-        'Araç Koltuk Yıkama': 150,
-        'Araç Alt Döşeme Yıkama': 120,
-        'Araç Tavan Yıkama': 80,
-        'Araç Motor Yıkama': 200,
-        'Pasta Cila': 250,
-        'Boya Koruma': 300,
-        'Seramik Kaplama': 350,
-        'Far Parlatma': 90,
-        'Ev Temizliği': 500,
-        'Cam Temizliği': 50,
-        'Leke Temizleme': 80,
-        'Kaba İnşaat Temizliği': 600
-    };
+  const servicePrices = {
+    'Koltuk Yıkama': 100,
+    'Araç Koltuk Yıkama': 150,
+    'Araç Alt Döşeme Yıkama': 120,
+    'Araç Tavan Yıkama': 80,
+    'Araç Motor Yıkama': 200,
+    'Pasta Cila': 250,
+    'Boya Koruma': 300,
+    'Seramik Kaplama': 350,
+    'Far Parlatma': 90,
+    'Ev Temizliği': 500,
+    'Cam Temizliği': 50,
+    'Leke Temizleme': 80,
+    'Kaba İnşaat Temizleme': 600
+  };
 
-    const serviceForm = document.getElementById('serviceForm');
-    const totalPriceElement = document.getElementById('totalPrice');
-    const quantityInputs = {};
+  // Hizmet isimleri ile quantity inputlarının name ve id değerleri arasındaki eşleme
+  const quantityFieldMap = {
+    'Koltuk Yıkama': 'quantityKoltuk',
+    'Araç Koltuk Yıkama': 'quantityAracKoltuk',
+    'Araç Alt Döşeme Yıkama': 'quantityAracAltDoseme',
+    'Araç Tavan Yıkama': 'quantityAracTavan',
+    'Araç Motor Yıkama': 'quantityAracMotor',
+    'Pasta Cila': 'quantityPastaCila',
+    'Boya Koruma': 'quantityBoyaKoruma',
+    'Seramik Kaplama': 'quantitySeramikKaplama',
+    'Far Parlatma': 'quantityFarParlatma',
+    'Ev Temizliği': 'quantityEvTemizligi',
+    'Cam Temizliği': 'quantityCamTemizligi',
+    'Leke Temizleme': 'quantityLekeTemizleme',
+    'Kaba İnşaat Temizleme': 'quantityKabaInsaatTemizleme'
+  };
 
-    // Function to update price
-    function updatePrice() {
-        let totalPrice = 0;
-        let quantity;
+  const serviceForm = document.getElementById('serviceForm');
+  const totalPriceElement = document.getElementById('totalPrice');
 
-        const services = serviceForm.querySelectorAll('input[type="checkbox"]:checked');
-        
-        services.forEach(service => {
-            const serviceName = service.value;
-            quantity = document.querySelector(`[name=quantity${serviceName.replace(/ /g, '')}]`) ? document.querySelector(`[name=quantity${serviceName.replace(/ /g, '')}]`).value : 1;
-            totalPrice += servicePrices[serviceName] * quantity;
-        });
+  // Toplam fiyatı güncelleyen fonksiyon
+  function updatePrice() {
+    let totalPrice = 0;
+    const selectedServices = serviceForm.querySelectorAll('input[type="checkbox"]:checked');
 
-        totalPriceElement.textContent = `₺${totalPrice}`;
+    selectedServices.forEach(service => {
+      const serviceName = service.value;
+      const quantityFieldName = quantityFieldMap[serviceName];
+      const quantityInput = document.querySelector(`[name="${quantityFieldName}"]`);
+      const quantity = quantityInput ? parseInt(quantityInput.value, 10) : 1;
+      totalPrice += servicePrices[serviceName] * quantity;
+    });
+
+    totalPriceElement.textContent = `₺${totalPrice}`;
+  }
+
+  // Checkbox ve adet input değişimlerini dinleyen event delegation
+  serviceForm.addEventListener('change', (event) => {
+    // Eğer checkbox ise ilgili quantity container'ı göster/gizle
+    if (event.target.type === 'checkbox') {
+      const serviceName = event.target.value;
+      const quantityFieldId = quantityFieldMap[serviceName];
+      const quantityContainer = document.getElementById(quantityFieldId);
+
+      if (event.target.checked) {
+        quantityContainer.style.display = 'block';
+      } else {
+        quantityContainer.style.display = 'none';
+      }
+      updatePrice();
     }
+    // Eğer adet (number) input ise, fiyatı güncelle
+    if (event.target.type === 'number') {
+      updatePrice();
+    }
+  });
 
-    // Show quantity input when service is selected
-    serviceForm.addEventListener('change', (event) => {
-        if (event.target.type === 'checkbox') {
-            const serviceName = event.target.value;
-            const quantityContainer = document.getElementById(`quantity${serviceName.replace(/ /g, '')}`);
-            
-            if (event.target.checked) {
-                quantityContainer.style.display = 'block';
-            } else {
-                quantityContainer.style.display = 'none';
-            }
+  // Daha anlık güncelleme için adet inputlarında 'input' eventini de dinleyebilirsiniz
+  serviceForm.addEventListener('input', (event) => {
+    if (event.target.type === 'number') {
+      updatePrice();
+    }
+  });
 
-            updatePrice();
-        }
-    });
-
-    // Submit form and log selected data (you can replace this with actual form submission logic)
-    serviceForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        alert(`Rezervasyon başarılı! Toplam Fiyat: ${totalPriceElement.textContent}`);
-    });
+  // Form gönderiminde örnek alert
+  serviceForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert(`Rezervasyon başarılı! Toplam Fiyat: ${totalPriceElement.textContent}`);
+  });
 });
