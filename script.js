@@ -24,12 +24,16 @@ dots.forEach((dot, index) => {
 });
 
 const changeBackground = () => {
-    // Dots'ları güncelle
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[currentDot].classList.add('active');
-
-    // Arka plan resmini değiştir
-    hero.style.backgroundImage = `url('${images[currentDot]}')`;
+    if (!images[currentDot]) return;
+    
+    const img = new Image();
+    img.src = images[currentDot];
+    img.onload = () => {
+        hero.style.backgroundImage = `url('${images[currentDot]}')`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentDot].classList.add('active');
+    }
+    img.onerror = () => console.error('Resim yüklenemedi:', images[currentDot]);
 };
 
 // İlk background'u başlat
