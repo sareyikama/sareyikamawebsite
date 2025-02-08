@@ -291,6 +291,35 @@ background-color: var(--top-bar-color);
 
 .top-bar-content span {
     margin: 0 10px;
+    position: relative; /* Simgelerin pozisyonunu ayarlamak için */
+    padding-left: 25px; /* Simge için boşluk bırak */
+}
+
+.top-bar-content span::before {
+    content: ''; /* Simge içeriği */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Dikeyde ortala */
+    width: 20px; /* Simge genişliği */
+    height: 20px; /* Simge yüksekliği */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Telefon simgesi */
+.top-bar-content span.phone::before {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/126/126341.png'); /* Telefon simgesi URL'si */
+}
+
+/* Adres simgesi */
+.top-bar-content span.address::before {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/684/684908.png'); /* Konum simgesi URL'si */
+}
+
+/* Saat simgesi */
+.top-bar-content span.hours::before {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2088/2088617.png'); /* Saat simgesi URL'si */
 }
 
 .address-link {
