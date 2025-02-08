@@ -272,5 +272,29 @@ body {
     }
 }
 
+/* Top Bar Stili */
+.top-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+}
 
+.top-bar-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
+.top-bar-content span {
+    margin: 0 10px;
+}
+
+.address-link {
+    color: #fff; /* Yazı rengi */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+}
+.address-link:hover {
+    text-decoration: underline; /* Üzerine gelince alt çizgi ekler */
+}
