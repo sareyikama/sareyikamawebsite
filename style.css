@@ -5,7 +5,7 @@
     --background-color: #F8F8F8;
     --text-color: #333;
     --top-bar-color: #195591;
-
+    --navbar-color: #68bbff;
 }
 
 body {
@@ -27,12 +27,10 @@ font-family: 'Questrial', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: var(--navbar-color);
     padding: 10px 40px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    width: 50%;
-    margin: 30px auto;
+    width: 100%;
 }
 
 .logo img {
@@ -43,7 +41,7 @@ font-family: 'Questrial', sans-serif;
 .menu {
     list-style: none;
     display: flex;
-    justify-content: right; /* Menü elemanlarını ortalar */
+    justify-content: center; /* Menü elemanlarını ortalar */
     width: 100%; /* Menü elemanları genişliği */
     gap: 30px; /* Menü öğeleri arasındaki boşluk */
 }
@@ -55,7 +53,7 @@ font-family: 'Questrial', sans-serif;
 
 .menu a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: white;
     font-weight: bold;
     font-size: 16px;
 }
@@ -93,7 +91,7 @@ body::after {
 }
 
 .content {
-    max-width: 500px;
+    max-width: 1000px;
 }
 
 .content h1 {
@@ -109,33 +107,34 @@ body::after {
 
 /* Hero Bölümü */
 .hero .content {
-    position: relative;
+    position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .content h1 {
     font-size: 36px; /* H1 için daha büyük font */
-    color: var(--primary-color);
+    color: white;
     font-weight: bold;
 }
 
 .content p {
     font-size: 20px; /* P için daha büyük font */
-    color: var(--secondary-color);
+    color: white;
 }
 
 .btn {
-    background-color: var(--primary-color);
+    background-color: var(--navbar-color);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 25px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 25px;
     margin-top: 20px;
 }
 
@@ -276,9 +275,9 @@ body {
 
 /* Top Bar Stili */
 .top-bar {
-background-color: var(--top-bar-color);
+    background-color: var(--top-bar-color);
     color: #fff;
-    padding: 30px 0;
+    padding: 10px 0; /* Dikey padding'i azalt */
     text-align: center;
     font-size: 14px;
 }
@@ -286,7 +285,8 @@ background-color: var(--top-bar-color);
 .top-bar-content {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center; /* İçerikleri dikeyde ortala */
+    gap: 20px; /* Öğeler arasındaki boşluğu ayarla */
 }
 
 .top-bar-content span {
