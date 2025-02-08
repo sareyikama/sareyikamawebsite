@@ -4,7 +4,7 @@ const hero = document.querySelector('.hero');
 
 // Arka plan resimlerini tanımla
 const images = [
-    'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/refs/heads/main/images/test.jpeg',
+    'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/refs/heads/main/images/test.png',
     'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/refs/heads/main/images/otherimage1.jpeg',
     'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/refs/heads/main/images/otherimage2.jpeg',
     'https://raw.githubusercontent.com/sareyikama/sareyikamawebsite/refs/heads/main/images/otherimage3.jpeg'
