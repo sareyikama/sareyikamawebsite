@@ -4,6 +4,8 @@
     --secondary-color: #7D7D7D;
     --background-color: #F8F8F8;
     --text-color: #333;
+    --top-bar-color: #195591;
+
 }
 
 body {
@@ -274,9 +276,9 @@ body {
 
 /* Top Bar Stili */
 .top-bar {
-    background-color: #333;
+background-color: var(--top-bar-color);
     color: #fff;
-    padding: 10px 0;
+    padding: 30px 0;
     text-align: center;
     font-size: 14px;
 }
@@ -297,4 +299,9 @@ body {
 }
 .address-link:hover {
     text-decoration: underline; /* Üzerine gelince alt çizgi ekler */
+}
+
+.phone-link {
+    color: #fff; /* Yazı rengi */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
 }
